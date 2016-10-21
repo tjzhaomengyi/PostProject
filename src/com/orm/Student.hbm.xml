@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-8 15:03:00 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.orm.Student" table="student" catalog="bbs">
+        <id name="id" type="java.lang.Integer">
+             <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="stunum" type="java.lang.String">
+            <column name="stuNum" length="15" not-null="true" />
+        </property>
+        <property name="realname" type="java.lang.String">
+             <column name="realname" length="10" />
+        </property>
+        <property name="nickname" type="java.lang.String">
+            <column name="nickname" length="20" />
+        </property>
+        <property name="password" type="java.lang.String">
+             <column name="password" length="20" not-null="true" />
+        </property>
+        <property name="qq" type="java.lang.String">
+           <column name="qq" length="20" />
+        </property>
+        <property name="email" type="java.lang.String">
+           <column name="email" length="30" />
+        </property>
+        <property name="major" type="java.lang.String">
+             <column name="major" length="20" />
+        </property>
+        <property name="classname" type="java.lang.String" >
+            <column name="classname" length="20" />
+        </property>
+        <property name="photopath" type="java.lang.String">
+            <column name="photoPath" length="100" />
+        </property>
+        <set name="replies" inverse="true">
+            <key>
+                <column name="sid" />
+            </key>
+           <one-to-many class="com.orm.Reply" />
+        </set>
+        <set name="posts" inverse="true" lazy="false">
+            <key>
+                <column name="sid" />
+            </key>
+            <one-to-many class="com.orm.Post" />
+        </set>
+    </class>
+</hibernate-mapping>
