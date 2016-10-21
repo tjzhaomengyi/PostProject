@@ -117,6 +117,7 @@ public class LoginAction extends ActionSupport{
     public String execute() throws Exception {
     	//登录前清空所有session
     	ActionContext.getContext().getSession().clear();
+    	System.out.println(student.getId()+","+student.getStunum());
     	Student s = loginService.stuLogin(student);
     	if(s != null){
     		ActionContext.getContext().getSession().put("student", s);

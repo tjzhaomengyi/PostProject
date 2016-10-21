@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib  prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>BBS</title>
-<script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
-<style type="text/css">
-	 #Lboard{    }
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>郑州轻工业学院BBS</title>
+        <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+        <style type="text/css">
+            #Lboard{    }
             .subBoard{ min-height:100px;   }
             .btitle{ padding-left:10px; text-align:left; line-height:30px;  
             color: #1B72AF; border:1px solid #D6E8F4; 
@@ -33,8 +33,10 @@
             #banner ul li { padding:0px 8px;  float:left;display:block;color:#FFF;border:#e5eaff 1px solid;background:#6f4f67;cursor:pointer}
             #banner ul li.on { background:#900}
             #banner_list a{position:absolute;} /*让四张图片都可以重叠在一起*/
-</style>
-<script type="text/javascript">
+
+        </style>
+
+        <script type="text/javascript">
             var t = n = 0, count;
             $(document).ready(function(){	
                 count=$("#banner_list a").length;
@@ -61,11 +63,11 @@
                 n = n >=(count - 1) ? 0 : ++n;
                 $("#banner li").eq(n).trigger('click');
             }
-</script>
+        </script>
 
-</head>
-<body>
-	 <s:set name="total" value="total" scope="application"></s:set>
+    </head>
+    <body>
+        <s:set name="total" value="total" scope="application"></s:set>
         <s:set name="yestNum" value="yestNum" scope="application"></s:set>
         <s:set name="todayNum" value="todayNum" scope="application" ></s:set>
         <s:set name="student" value="student" scope="session" ></s:set>
@@ -123,10 +125,11 @@
         <div class="btitle">友情链接</div>
         <div class="subBoard">
             <ul>
-                <li><a href="http://www.baidu.com/">BBS论坛</a></li>
-                <li><a href="http://www.qq.com/">BBS链接</a></li>
+                <li><a href="http://www.zzuli.edu.cn/">郑州轻工业学院</a></li>
+                <li><a href="http://www.tup.tsinghua.edu.cn/">清华大学出版社</a></li>
             </ul>
 
         </div>
-</body>
+
+    </body>
 </html>

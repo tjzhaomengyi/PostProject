@@ -17,7 +17,7 @@
             <div id="Top"> 
                 <div id="logo">
                     <img src="<%=request.getContextPath()%>/images/media.jpg" alt="郑州轻工业学院BBS"  border="0"  />
-                    <label style="font-size:30px; font-weight: bold;">郑州轻工业学院论坛</label>
+                    <label style="font-size:30px; font-weight: bold;">BBS论坛</label>
                     <div id="logRegist">
                         <s:if test="#session.student!=null">
                             <span id="po"><img style=" float: right;width:50px; height:50px;" src="<%=request.getContextPath()%>/upload/<s:property value="#session.student.photoPath" />" /></span>

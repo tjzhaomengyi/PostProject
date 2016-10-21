@@ -11,7 +11,7 @@
 	<constant name="struts.i18n.encoding" value="UTF-8"/>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 	<!-- 所有的Action定义都应该放在package下 -->
-	<package name="default" namespace="/" extends="struts-default">
+	<package name="default" extends="struts-default">
 		<interceptors>
 		    <!--定义一个名为authority的拦截器  -->
 		    <interceptor class="com.interceptor.AuthorityInterceptor" name="authority"/>
@@ -123,7 +123,7 @@
 	
 	
 	<!--sh登录和Android App对应的Struts2配置  -->
-	<package name="web" extends="struts-default" namespace="/">
+	<package name="web" extends="struts-default" namespace="/demo">
 		<action name="login" class="org.crazyit.app.action.LoginAction" >
 			<!-- 定义三个逻辑视图和物理资源之间的映射 -->		
 			<result name="input">/error.jsp</result>

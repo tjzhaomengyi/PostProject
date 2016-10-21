@@ -16,7 +16,7 @@ public class LoginServiceImpl implements ILoginService{
 	public Student stuLogin(Student student){
 		//判断学号和密码是否与数据库相等
 		Student stu = (Student) dao.loadObject(
-				"from Student as s where s.stuNum = '"+student.getStunum()+"' and s.password= '"+student.getPassword()+"' ");
+				"from Student as s where s.stunum = '"+student.getStunum()+"' and s.password= '"+student.getPassword()+"' ");
 		if(stu != null){
 			return stu;
 		}

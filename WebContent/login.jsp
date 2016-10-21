@@ -68,7 +68,7 @@
             <s:form action="login">
                 <s:textfield name="student.stuNum" label="学号" cssClass="outerBorder"></s:textfield>
                 <s:password name="student.password" label="密码" cssClass="outerBorder"></s:password>
-                <s:submit value=""  cssClass="loginBtn"></s:submit>
+                <s:submit value=" " cssClass="loginBtn"></s:submit>
             </s:form>
             <s:actionmessage/>
         </div>
@@ -77,7 +77,7 @@
             <s:form action="login!adminLogin.action">
                 <s:textfield name="admin.account" label="账号" cssClass="outerBorder" ></s:textfield>
                 <s:password name="admin.password" label="密码" cssClass="outerBorder"></s:password>
-                <s:submit value="" cssClass="loginBtn" ></s:submit>
+                <s:submit value=" " cssClass="loginBtn" ></s:submit>
             </s:form>
            <s:actionmessage/>
         </div>

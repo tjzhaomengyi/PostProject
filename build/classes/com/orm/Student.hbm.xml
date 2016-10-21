@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <property name="stunum" type="java.lang.String">
-            <column name="stuNum" length="15" not-null="true" />
+            <column name="stunum" length="15" not-null="true" />
         </property>
         <property name="realname" type="java.lang.String">
              <column name="realname" length="10" />
