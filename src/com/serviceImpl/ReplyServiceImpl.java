@@ -24,7 +24,7 @@ public class ReplyServiceImpl implements IReplyService{
 	@Override
 	public List<Reply> getReplysByPid(int pId) {
 		try{
-		List<Reply> replies = (List<Reply>) dao.loadObject("from reply as r where r.pid = '"+pId+"' ");
+		List<Reply> replies = (List<Reply>) dao.loadObject("from Reply as r where r.pid = '"+pId+"' ");
 		return replies;
 	}catch(Exception e){
 		return null;

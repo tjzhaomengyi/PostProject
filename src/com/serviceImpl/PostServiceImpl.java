@@ -106,7 +106,7 @@ public class PostServiceImpl implements IPostService{
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
         String today = sf.format(todayDate)+" 00:00:00";
         String tomorrow = sf.format(tomorrowDate)+" 00:00:00";
-       return dao.countQuery("select count(*) from Post as p where p.publishTime between '"+today+"' and '"+tomorrow+"'     " );
+       return dao.countQuery("select count(*) from Post as p where p.publishtime between '"+today+"' and '"+tomorrow+"'     " );
 	}
 
 	@Override
@@ -116,7 +116,7 @@ public class PostServiceImpl implements IPostService{
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 		String today = sf.format(todayDate)+" 00:00:00";
 		String yesterday = sf.format(ysterDate)+" 00:00:00";
-		return dao.countQuery("select count(*) from Post as p where p.publishTime between '"+yesterday+"' and '"+today+"'  ");
+		return dao.countQuery("select count(*) from Post as p where p.publishtime between '"+yesterday+"' and '"+today+"'  ");
 	}
 
 	@Override

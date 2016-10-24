@@ -17,6 +17,8 @@ public class LoginServiceImpl implements ILoginService{
 		//判断学号和密码是否与数据库相等
 		Student stu = (Student) dao.loadObject(
 				"from Student as s where s.stunum = '"+student.getStunum()+"' and s.password= '"+student.getPassword()+"' ");
+		
+		System.out.println("Hql query,"+stu.getStunum()+stu.getPassword());
 		if(stu != null){
 			return stu;
 		}

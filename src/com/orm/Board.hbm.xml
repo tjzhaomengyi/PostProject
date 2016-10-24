@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <many-to-one name="board" class="com.orm.Board" fetch="select">
-            <column name="parentId"/>
+            <column name="parentid"/>
         </many-to-one>
         <many-to-one name="admin" class="com.orm.Admin" fetch="select">
             <column name="aid" not-null="true" />
@@ -31,7 +31,7 @@
         </set>
         <set name="boards" inverse="true" lazy="false" order-by="id asc">
             <key>
-                <column name="parentId" />
+                <column name="parentid" />
             </key>
             <one-to-many class="com.orm.Board" />
         </set>

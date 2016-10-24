@@ -79,7 +79,7 @@ public class MyUpload extends ActionSupport{
 		//将头像路径写入数据库
 		Student stu = (Student) ActionContext.getContext().getSession().get("student");
 		if(stu != null){
-			Student temp = studentService.getStudentByStuNum(stu.getStunum());
+			Student temp = studentService.getStudentByStunum(stu.getStunum());
 			temp.setPhotopath(getDocFileName());
 			studentService.modifyStudent(temp);
 		}

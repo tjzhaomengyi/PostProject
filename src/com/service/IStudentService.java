@@ -9,7 +9,7 @@ import com.orm.Student;
 
 public interface IStudentService {
     
-    public Student getStudentByStuNum(String StuNum);
+    public Student getStudentByStunum(String Stunum);
     
     public boolean modifyStudent(Student student);
     

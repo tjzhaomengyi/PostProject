@@ -120,7 +120,7 @@ public class PostAction extends ActionSupport{
     	HttpServletRequest request = ServletActionContext.getRequest();
     	Student s = (Student) request.getSession().getAttribute("student");
     	if(s!=null){
-    		setStudent(studentService.getStudentByStuNum(s.getStunum()));
+    		setStudent(studentService.getStudentByStunum(s.getStunum()));
     	}
     	return "preparePost";
     }
@@ -169,7 +169,7 @@ public class PostAction extends ActionSupport{
     	//学生登录
     	if(request.getSession().getAttribute("student")!=null){
     		Student s = (Student) request.getSession().getAttribute("student");
-    		setStudent(studentService.getStudentByStuNum(s.getStunum()));
+    		setStudent(studentService.getStudentByStunum(s.getStunum()));
     	}
     	//管理员登录
     	if(request.getSession().getAttribute("admin")!=null){
@@ -201,7 +201,7 @@ public class PostAction extends ActionSupport{
     	Admin a = (Admin) ActionContext.getContext().getSession().get("admin");
     	if(s!=null){
     		setMyPosts(postService.allPostsByUser(s));
-    		setStudent(studentService.getStudentByStuNum(s.getStunum()));
+    		setStudent(studentService.getStudentByStunum(s.getStunum()));
     		return "myposts";
     	}
     	if(a!=null){

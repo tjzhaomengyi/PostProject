@@ -33,7 +33,7 @@ public class StudentManageAction extends ActionSupport{
     {
     	Student sessionStudent = (Student) ActionContext.getContext().getSession().get("student");
     	if(sessionStudent != null){
-    		setStudent(studentService.getStudentByStuNum(sessionStudent.getStunum()));
+    		setStudent(studentService.getStudentByStunum(sessionStudent.getStunum()));
     		return SUCCESS;
     	}
     	return ERROR;
@@ -43,7 +43,7 @@ public class StudentManageAction extends ActionSupport{
     //修改个人信息
     public String modifyStuInfo() throws Exception{
     	Student snStudent = (Student) ActionContext.getContext().getSession().get("student");
-    	Student s = studentService.getStudentByStuNum(snStudent.getStunum());
+    	Student s = studentService.getStudentByStunum(snStudent.getStunum());
     	Student temp = getStudent();
     	s.setNickname(temp.getNickname());
     	s.setQq(temp.getQq());
@@ -59,7 +59,7 @@ public class StudentManageAction extends ActionSupport{
 	public String MoidfyPsw() throws Exception{
 		//获取当前学生信息
 		Student sessionStudent = (Student) ActionContext.getContext().getSession().get("student");
-		Student s = studentService.getStudentByStuNum(sessionStudent.getStunum());
+		Student s = studentService.getStudentByStunum(sessionStudent.getStunum());
 		if(getPsw().equals(s.getPassword())&&getNewpsw().equals(getConfirmpsw())){
 			s.setPassword(getNewpsw());
 			studentService.modifyStudent(s);

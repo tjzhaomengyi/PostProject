@@ -26,12 +26,12 @@ public class Student implements java.io.Serializable {
     }
 
 	
-    public Student(String stuNum, String password) {
-        this.stunum = stuNum;
+    public Student(String stunum, String password) {
+        this.stunum = stunum;
         this.password = password;
     }
-    public Student(String stuNum, String realName, String nickName, String password, String qq, String email, String major, String className, String photoPath, Set replies, Set posts) {
-       this.stunum = stuNum;
+    public Student(String stunum, String realName, String nickName, String password, String qq, String email, String major, String className, String photoPath, Set replies, Set posts) {
+       this.stunum = stunum;
        this.realname = realName;
        this.nickname = nickName;
        this.password = password;
@@ -55,8 +55,8 @@ public class Student implements java.io.Serializable {
         return this.stunum;
     }
     
-    public void setStunum(String stuNum) {
-        this.stunum = stuNum;
+    public void setStunum(String stunum) {
+        this.stunum = stunum;
     }
     public String getRealname() {
         return this.realname;

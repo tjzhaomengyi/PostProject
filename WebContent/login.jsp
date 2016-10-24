@@ -66,7 +66,7 @@
        <div id="tabContent">
         <div id="stuLoginF" style="display: block;" >
             <s:form action="login">
-                <s:textfield name="student.stuNum" label="学号" cssClass="outerBorder"></s:textfield>
+                <s:textfield name="student.stunum" label="学号" cssClass="outerBorder"></s:textfield>
                 <s:password name="student.password" label="密码" cssClass="outerBorder"></s:password>
                 <s:submit value=" " cssClass="loginBtn"></s:submit>
             </s:form>

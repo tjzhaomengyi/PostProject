@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2016-10-8 15:03:00 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.orm.Post" table="POST">
+    <class name="com.orm.Post" table="post" catalog="bbs">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />

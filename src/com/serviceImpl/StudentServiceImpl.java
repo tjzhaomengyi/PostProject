@@ -12,7 +12,7 @@ public class StudentServiceImpl implements IStudentService{
 	BaseDao dao;
 
 	@Override
-	public Student getStudentByStuNum(String StuNum) {
+	public Student getStudentByStunum(String StuNum) {
 		Student s = (Student) dao.loadObject("from Student as s where s.stunum = '"+ StuNum + "' ");
 		if(s!=null){
 			return s;

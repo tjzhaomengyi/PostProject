@@ -117,7 +117,7 @@ public class LoginAction extends ActionSupport{
     public String execute() throws Exception {
     	//登录前清空所有session
     	ActionContext.getContext().getSession().clear();
-    	System.out.println(student.getId()+","+student.getStunum());
+    	System.out.println(student.getStunum()+","+student.getPassword());
     	Student s = loginService.stuLogin(student);
     	if(s != null){
     		ActionContext.getContext().getSession().put("student", s);
@@ -172,7 +172,7 @@ public class LoginAction extends ActionSupport{
     		setCount(postService.getPostsCount());
     		setList(postService.pageAllPost(getBid(), getPageNo(),getPageSize()));
     		if(tempStudent != null){
-    			setStudent(studentService.getStudentByStuNum(tempStudent.getStunum()));
+    			setStudent(studentService.getStudentByStunum(tempStudent.getStunum()));
     		}
     		return SUCCESS;
     	}catch(Exception e) {

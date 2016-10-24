@@ -81,7 +81,7 @@ public class IndexAction extends ActionSupport{
         try {
             Student sessionStudent = (Student) ActionContext.getContext().getSession().get("student");
         if (sessionStudent!= null) {
-            setStudent(studentService.getStudentByStuNum(sessionStudent.getStunum()));
+            setStudent(studentService.getStudentByStunum(sessionStudent.getStunum()));
         }
             //加载板块
             setRootBoard(boardService.loadRootBoards());
