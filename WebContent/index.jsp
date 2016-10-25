@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>郑州轻工业学院BBS</title>
+        <title>BBS</title>
         <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
         <style type="text/css">
             #Lboard{    }
@@ -81,7 +81,7 @@
                     <li>4</li>
                 </ul>
                 <div id="banner_list">
-                    <a href="#" target="_blank"><img src="images/imgs/10794203.jpg" title="郑州轻工业学院" alt="郑州轻工业学院" /></a>
+                    <a href="#" target="_blank"><img src="images/imgs/10794203.jpg" title="论坛" alt="论坛" /></a>
                     <a href="#" target="_blank"><img src="images/imgs/p5.jpg" title="橡树小屋的blog" alt="橡树小屋的blog" /></a>
                     <a href="#" target="_blank"><img src="images/imgs/p3.jpg" title="橡树小屋的blog" alt="橡树小屋的blog" /></a>
                     <a href="#" target="_blank"><img src="images/imgs/p4.jpg" title="橡树小屋的blog" alt="橡树小屋的blog" /></a>
@@ -125,7 +125,7 @@
         <div class="btitle">友情链接</div>
         <div class="subBoard">
             <ul>
-                <li><a href="http://www.zzuli.edu.cn/">郑州轻工业学院</a></li>
+                <li><a href="http://www.zzuli.edu.cn/">BBS论坛</a></li>
                 <li><a href="http://www.tup.tsinghua.edu.cn/">清华大学出版社</a></li>
             </ul>
 

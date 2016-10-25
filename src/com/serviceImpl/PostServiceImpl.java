@@ -38,7 +38,7 @@ public class PostServiceImpl implements IPostService{
 	@Override
 	public List<Post> pageAllPost(int bid, int pageNo, int pageSize) {
 		return dao.query(
-			"from Post as p where p.board ="+bid+"' order by p.publishTime desc  ",pageNo,pageSize);
+			"from Post as p where p.board ="+bid+"'order by p.publishtime desc  ",pageNo,pageSize);
 		
 	}
 
@@ -57,12 +57,12 @@ public class PostServiceImpl implements IPostService{
 	public List<Post> allPostsByUser(Object user) {
 		if(user instanceof Student){
 			Student s = (Student) user;
-			List<Post> list = (List<Post>)dao.query("from Post as p where p.student = "+s.getId()+" order by p.publishTime desc ");
+			List<Post> list = (List<Post>)dao.query("from Post as p where p.student="+s.getId()+" order by p.publishtime desc");
 			return list;
 		}
 		if(user instanceof Admin){
 			Admin a = (Admin) user;
-			List<Post> list = dao.query("from Post as p where p.admin.id='"+a.getId()+"' ");
+			List<Post> list = dao.query("from Post as p where p.admin.id='"+a.getId()+"'");
 			return list;
 		}
 		return null;
@@ -106,7 +106,7 @@ public class PostServiceImpl implements IPostService{
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
         String today = sf.format(todayDate)+" 00:00:00";
         String tomorrow = sf.format(tomorrowDate)+" 00:00:00";
-       return dao.countQuery("select count(*) from Post as p where p.publishtime between '"+today+"' and '"+tomorrow+"'     " );
+       return dao.countQuery("select count(*) from Post as p where p.publishtime between '"+today+"'and '"+tomorrow+"'     " );
 	}
 
 	@Override

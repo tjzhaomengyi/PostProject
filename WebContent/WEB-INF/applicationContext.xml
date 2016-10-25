@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="GBK"?>
-<!-- Ö¸¶¨SpringÅäÖÃÎÄ¼þµÄSchemaÐÅÏ¢ -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- æŒ‡å®šSpringé…ç½®æ–‡ä»¶çš„Schemaä¿¡æ¯ -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:context="http://www.springframework.org/schema/context"
@@ -15,33 +15,33 @@
 	http://www.springframework.org/schema/aop 
 	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
         
-     <!-- ¶¨ÒåÊý¾ÝÔ´Bean£¬Ê¹ÓÃC3P0Êý¾ÝÔ´ÊµÏÖ -->
+     <!-- å®šä¹‰æ•°æ®æºBeanï¼Œä½¿ç”¨C3P0æ•°æ®æºå®žçŽ° -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-		<!-- Ö¸¶¨Á¬½ÓÊý¾Ý¿âµÄÇý¶¯ -->
+		<!-- æŒ‡å®šè¿žæŽ¥æ•°æ®åº“çš„é©±åŠ¨ -->
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-		<!-- Ö¸¶¨Á¬½ÓÊý¾Ý¿âµÄURL -->
+		<!-- æŒ‡å®šè¿žæŽ¥æ•°æ®åº“çš„URL -->
         <property name="jdbcUrl" value="jdbc:mysql://localhost/bbs"/>
-		<!-- Ö¸¶¨Á¬½ÓÊý¾Ý¿âµÄÓÃ»§Ãû -->
+		<!-- æŒ‡å®šè¿žæŽ¥æ•°æ®åº“çš„ç”¨æˆ·å -->
         <property name="user" value="root"/>
-		<!-- Ö¸¶¨Á¬½ÓÊý¾Ý¿âµÄÃÜÂë -->
+		<!-- æŒ‡å®šè¿žæŽ¥æ•°æ®åº“çš„å¯†ç  -->
         <property name="password" value="123321"/>
-		<!-- Ö¸¶¨Á¬½ÓÊý¾Ý¿âÁ¬½Ó³ØµÄ×î´óÁ¬½ÓÊý -->
+		<!-- æŒ‡å®šè¿žæŽ¥æ•°æ®åº“è¿žæŽ¥æ± çš„æœ€å¤§è¿žæŽ¥æ•° -->
         <property name="maxPoolSize" value="40"/>
-		<!-- Ö¸¶¨Á¬½ÓÊý¾Ý¿âÁ¬½Ó³ØµÄ×îÐ¡Á¬½ÓÊý -->
+		<!-- æŒ‡å®šè¿žæŽ¥æ•°æ®åº“è¿žæŽ¥æ± çš„æœ€å°è¿žæŽ¥æ•° -->
         <property name="minPoolSize" value="1"/>
-		<!-- Ö¸¶¨Á¬½ÓÊý¾Ý¿âÁ¬½Ó³ØµÄ³õÊ¼»¯Á¬½ÓÊý -->
+		<!-- æŒ‡å®šè¿žæŽ¥æ•°æ®åº“è¿žæŽ¥æ± çš„åˆå§‹åŒ–è¿žæŽ¥æ•° -->
         <property name="initialPoolSize" value="1"/>
-		<!-- Ö¸¶¨Á¬½ÓÊý¾Ý¿âÁ¬½Ó³ØµÄÁ¬½ÓµÄ×î´ó¿ÕÏÐÊ±¼ä -->
+		<!-- æŒ‡å®šè¿žæŽ¥æ•°æ®åº“è¿žæŽ¥æ± çš„è¿žæŽ¥çš„æœ€å¤§ç©ºé—²æ—¶é—´ -->
         <property name="maxIdleTime" value="20"/>
     </bean>
-	<!-- ¶¨ÒåHibernateµÄSessionFactory -->
+	<!-- å®šä¹‰Hibernateçš„SessionFactory -->
     <bean id="sessionFactory"  class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-		<!-- ÒÀÀµ×¢ÈëÊý¾ÝÔ´£¬×¢ÈëÕýÊÇÉÏÃæ¶¨ÒåµÄdataSource -->
+		<!-- ä¾èµ–æ³¨å…¥æ•°æ®æºï¼Œæ³¨å…¥æ­£æ˜¯ä¸Šé¢å®šä¹‰çš„dataSource -->
         <property name="dataSource" ref="dataSource"/>
-		<!-- mappingResoucesÊôÐÔÓÃÀ´ÁÐ³öÈ«²¿Ó³ÉäÎÄ¼þ -->
+		<!-- mappingResouceså±žæ€§ç”¨æ¥åˆ—å‡ºå…¨éƒ¨æ˜ å°„æ–‡ä»¶ -->
         <property name="mappingResources">
             <list>
-				<!-- ÒÔÏÂÓÃÀ´ÁÐ³öHibernateÓ³ÉäÎÄ¼þ -->
+				<!-- ä»¥ä¸‹ç”¨æ¥åˆ—å‡ºHibernateæ˜ å°„æ–‡ä»¶ -->
                 <value>com/orm/Admin.hbm.xml</value>
                 <value>com/orm/Board.hbm.xml</value>
                 <value>com/orm/Post.hbm.xml</value>
@@ -49,9 +49,9 @@
                 <value>com/orm/Reply.hbm.xml</value>
             </list>
         </property>
-		<!-- ¶¨ÒåHibernateµÄSessionFactoryµÄÊôÐÔ -->
+		<!-- å®šä¹‰Hibernateçš„SessionFactoryçš„å±žæ€§ -->
         <property name="hibernateProperties">
-			<!-- ÅäÖÃHibernateÊôÐÔ -->
+			<!-- é…ç½®Hibernateå±žæ€§ -->
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
@@ -71,19 +71,19 @@
             <value>true</value>  
         </property>  
     </bean> 
-         <!-- ÒÀÀµ×¢Èë Í¨¹ý×¢½â×¢Èë -->
-         <!-- ¼´½«±»×¢Èëdao -->
+         <!-- ä¾èµ–æ³¨å…¥ é€šè¿‡æ³¨è§£æ³¨å…¥ -->
+         <!-- å³å°†è¢«æ³¨å…¥dao -->
     <bean id="dao" class="com.dao.BaseDaoImpl" ></bean>
-        <!-- ÒµÎñ²ã×¢Èë ¼´½«×¢Èëaction¿ØÖÆ²ã -->
+        <!-- ä¸šåŠ¡å±‚æ³¨å…¥ å³å°†æ³¨å…¥actionæŽ§åˆ¶å±‚ -->
     <bean id="loginService" class="com.serviceImpl.LoginServiceImpl" ></bean>
     <bean id="boardService" class="com.serviceImpl.BoardServiceImpl" ></bean>
     <bean id="postService" class="com.serviceImpl.PostServiceImpl" ></bean>
     <bean id="replyService" class="com.serviceImpl.ReplyServiceImpl" ></bean>
     <bean id="studentService" class="com.serviceImpl.StudentServiceImpl" ></bean>
     <bean id="adminService" class="com.serviceImpl.AdminServiceImpl" ></bean>
-	<!-- ¿ªÆôSpringµÄAnnotation×¢½â´¦ÀíÆ÷ -->
+	<!-- å¼€å¯Springçš„Annotationæ³¨è§£å¤„ç†å™¨ -->
     <context:annotation-config />
 
-	<!-- ¿ªÆôSpringµÄBean×Ô¶¯É¨Ãè»úÖÆÀ´²éÕÒÓë¹ÜÀíBeanÊµÀý -->
+	<!-- å¼€å¯Springçš„Beanè‡ªåŠ¨æ‰«ææœºåˆ¶æ¥æŸ¥æ‰¾ä¸Žç®¡ç†Beanå®žä¾‹ -->
     <context:component-scan base-package="com" />
 </beans>

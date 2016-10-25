@@ -10,7 +10,7 @@
         <center>
             <h3>头像上传</h3>
             <hr/>
-            <s:form action="myUpload" enctype="multipart/form-data">
+            <s:form action="myupload" enctype="multipart/form-data">
                 <s:file name="doc" label="选择上传文件"/>
                 <s:submit value="上传"/>
             </s:form>

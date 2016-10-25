@@ -1,36 +1,36 @@
-<?xml version="1.0" encoding="GBK"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
 	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
-<!-- Ö¸¶¨Struts 2ÅäÖÃÎÄ¼þµÄ¸ùÔªËØ -->
+<!-- æŒ‡å®šStruts 2é…ç½®æ–‡ä»¶çš„æ ¹å…ƒç´  -->
 <struts>
-	<!-- Ö¸¶¨È«¾Ö¹ú¼Ê»¯×ÊÔ´ÎÄ¼þ -->
+	<!-- æŒ‡å®šå…¨å±€å›½é™…åŒ–èµ„æºæ–‡ä»¶ -->
 	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
 	<constant name="struts.custom.i18n.resources" value="mess"/>
-	<!-- Ö¸¶¨¹ú¼Ê»¯±àÂëËùÊ¹ÓÃµÄ×Ö·û¼¯ -->	
+	<!-- æŒ‡å®šå›½é™…åŒ–ç¼–ç æ‰€ä½¿ç”¨çš„å­—ç¬¦é›† -->	
 	<constant name="struts.i18n.encoding" value="UTF-8"/>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
-	<!-- ËùÓÐµÄAction¶¨Òå¶¼Ó¦¸Ã·ÅÔÚpackageÏÂ -->
+	<!-- æ‰€æœ‰çš„Actionå®šä¹‰éƒ½åº”è¯¥æ”¾åœ¨packageä¸‹ -->
 	<package name="default" extends="struts-default">
 		<interceptors>
-		    <!--¶¨ÒåÒ»¸öÃûÎªauthorityµÄÀ¹½ØÆ÷  -->
+		    <!--å®šä¹‰ä¸€ä¸ªåä¸ºauthorityçš„æ‹¦æˆªå™¨  -->
 		    <interceptor class="com.interceptor.AuthorityInterceptor" name="authority"/>
-		    	<!--¶¨ÒåÒ»¸öÈ¨ÏÞ¼ì²éµÄÀ¹½ØÆ÷Õ»  -->
+		    	<!--å®šä¹‰ä¸€ä¸ªæƒé™æ£€æŸ¥çš„æ‹¦æˆªå™¨æ ˆ  -->
 		    	<interceptor-stack name="mydefault">
-		    	    <!-- ÅäÖÃ×Ô¶¨ÒåµÄÀ¹½ØÆ÷ -->
+		    	    <!-- é…ç½®è‡ªå®šä¹‰çš„æ‹¦æˆªå™¨ -->
 		    	    <interceptor-ref name="authority">
 		    	    	<param name="includeMethods">
 		    	    		preparePost,stuReply,viewPostsByUser,personalStuInfo
 		    	   	 	</param>
 		    	    </interceptor-ref>
-		    	    <!--ÅäÖÃÄÚ½¨Ä¬ÈÏÀ¹½ØÆ÷  -->
+		    	    <!--é…ç½®å†…å»ºé»˜è®¤æ‹¦æˆªå™¨  -->
 		    	    <interceptor-ref name="defaultStack"/>
 		    	  </interceptor-stack>
 		</interceptors>
 		
 		<default-interceptor-ref name="mydefault"></default-interceptor-ref>
 		
-		<!--¶¨ÒåÈ«¾ÖResult  -->
+		<!--å®šä¹‰å…¨å±€Result  -->
 		<global-results>
 			<result name="login">/login.jsp</result>
 			<result name="stuPersonalInfo">/MessageInfo/pleaseComplete.jsp</result>
@@ -42,7 +42,7 @@
 		    <result name="success">/index.jsp</result>
 		</action>
 		
-		<!--µÇÂ¼ÅäÖÃ  -->
+		<!--ç™»å½•é…ç½®  -->
 		<action name="login" class="com.action.LoginAction">
 			<result name="loginSuccess">/MessageInfo/loginSuccess.jsp</result>
 			<result name="success">/Mainbbs.jsp</result>
@@ -50,7 +50,7 @@
 			<result name="exit">/redirect.jsp</result>
 		</action>
 		
-		<!--°å¿é¹ÜÀí  -->
+		<!--æ¿å—ç®¡ç†  -->
 		<action name="board" class="com.action.BoardAction">
 			<result name="success">/BoardManage/MainBoard.jsp</result>
 			<result name="addBoard">/BoardManage/AddBoard.jsp</result>
@@ -59,21 +59,21 @@
 			<result name="prepareModifyBoard">/BoardManage/modifyBoardInfo.jsp</result>
 		</action>
 			
-		<!-- Ñ§Éú¹ÜÀí-->
+		<!-- å­¦ç”Ÿç®¡ç†-->
         <action name="student" class="com.action.StudentManageAction">
             <result name="modifySuccess">/MessageInfo/ModifyStuInfoSuccess.jsp</result>
             <result name="success">/PersonalInfo/StuPersonalInfo.jsp</result>
             <result name="modifyPswSuccess">/PersonalInfo/StuPswModify.jsp</result>
         </action>
         
-         <!-- ¹ÜÀíÔ± -->
+         <!-- ç®¡ç†å‘˜ -->
      	<action name="admin" class="com.action.AdminManageAction">
             <result name="success">/PersonalInfo/AdminPersonalInfo.jsp</result>
         </action>
         
-     	<!-- ·¢ÌûÅäÖÃ -->
+     	<!-- å‘å¸–é…ç½® -->
      	<action name="post" class="com.action.PostAction">
-       		<!--Ö±½ÓÌø×ªµ½Ê×Ò³  -->
+       		<!--ç›´æŽ¥è·³è½¬åˆ°é¦–é¡µ  -->
      		<result name="success">/PostManagement/PostManage.jsp</result>
      		<result name="postSuccess">/PostManagement/postSuccess.jsp</result>
      		<result name="viewDetail">/PostManagement/ViewPostDetail.jsp</result>
@@ -88,9 +88,9 @@
 			<result name="searchSuccess">/PostManagement/PostSearchResult.jsp</result>
 		</action>     		    
 		
-		 <!-- »ØÌûÅäÖÃ -->
+		 <!-- å›žå¸–é…ç½® -->
          <action name="reply" class="com.action.ReplyAction">
-             <!-- »¹ÊÇÌø×ªµ½Ìû×ÓÏêÏ¸ÐÅÏ¢Ò³Ãæ -->
+             <!-- è¿˜æ˜¯è·³è½¬åˆ°å¸–å­è¯¦ç»†ä¿¡æ¯é¡µé¢ -->
             <result name="success" type="redirectAction">post!viewDetail.action?pid=%{#request.pid}</result>
             <result name="modifySuccess" type="redirectAction">
                <param name="actionName"></param>    
@@ -104,8 +104,8 @@
             </result>
           </action>
           
-          <!-- ÉÏ´«Í·Ïñ -->
-        <action name="myUpload" class="com.action.MyUpload">
+          <!-- ä¸Šä¼ å¤´åƒ -->
+        <action name="myupload" class="com.action.MyUpload">
             <interceptor-ref name="fileUpload">
                <!--  <param name="allowedTypes">
 		image/png,image/gif,image/bmp,image/jpeg,image/jpg,image/pjpg
@@ -122,10 +122,10 @@
      	
 	
 	
-	<!--shµÇÂ¼ºÍAndroid App¶ÔÓ¦µÄStruts2ÅäÖÃ  -->
+	<!--shç™»å½•å’ŒAndroid Appå¯¹åº”çš„Struts2é…ç½®  -->
 	<package name="web" extends="struts-default" namespace="/demo">
 		<action name="login" class="org.crazyit.app.action.LoginAction" >
-			<!-- ¶¨ÒåÈý¸öÂß¼­ÊÓÍ¼ºÍÎïÀí×ÊÔ´Ö®¼äµÄÓ³Éä -->		
+			<!-- å®šä¹‰ä¸‰ä¸ªé€»è¾‘è§†å›¾å’Œç‰©ç†èµ„æºä¹‹é—´çš„æ˜ å°„ -->		
 			<result name="input">/error.jsp</result>
 			<result name="error">/login.jsp</result>
 			<result name="success">/success.jsp</result>
@@ -138,9 +138,9 @@
 		</action>
 	</package>
 	
-	<package name="app" extends="json-default" namespace="/">
+	<package name="app" extends="json-default" namespace="/app">
 	    <!-- setting action -->
-	    <!--action name¶ÔÓ¦urlµÄ¶ÔÓ¦  -->
+	    <!--action nameå¯¹åº”urlçš„å¯¹åº”  -->
 		<action name="login4app" class="com.crazyit.app.action4mobile.LoginAppAction" method="login">
 		    <result type="json"></result>
 		 </action>	    

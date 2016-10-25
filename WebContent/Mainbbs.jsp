@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>郑州轻工业学院论坛</title>
+        <title>BBS论坛</title>
         <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/pagination.css" />
         <script type="text/javascript" src="<%=request.getContextPath()%>/js/pagination.js"></script>
         <style type="text/css">

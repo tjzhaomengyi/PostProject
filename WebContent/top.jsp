@@ -16,7 +16,7 @@
         <div id="wrap">
             <div id="Top"> 
                 <div id="logo">
-                    <img src="<%=request.getContextPath()%>/images/media.jpg" alt="郑州轻工业学院BBS"  border="0"  />
+                    <img src="<%=request.getContextPath()%>/images/media.jpg" alt="论坛BBS"  border="0"  />
                     <label style="font-size:30px; font-weight: bold;">BBS论坛</label>
                     <div id="logRegist">
                         <s:if test="#session.student!=null">

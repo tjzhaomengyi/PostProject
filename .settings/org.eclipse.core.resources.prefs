@@ -1,11 +1,11 @@
 eclipse.preferences.version=1
-encoding//WebContent/WEB-INF/web.xml=GBK
+encoding//WebContent/WEB-INF/web.xml=UTF-8
 encoding//src/com/action/IndexAction.java=UTF-8
 encoding//src/com/service/IAdminService.java=UTF-8
 encoding//src/com/service/IBoardService.java=UTF-8
 encoding//src/com/service/ILoginService.java=UTF-8
 encoding//src/com/service/IReplyService.java=UTF-8
-encoding//src/mess.properties=GBK
-encoding//src/mess_zh_CN.properties=GBK
-encoding/<project>=GBK
+encoding//src/mess.properties=UTF-8
+encoding//src/mess_zh_CN.properties=UTF-8
+encoding/<project>=UTF-8
 encoding/bbs.sql=UTF-8

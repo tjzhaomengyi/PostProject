@@ -124,7 +124,7 @@
             </s:iterator> 
         </table>
        <div id="fastReply">
-            <s:form action="reply!stuReply.action?pid=%{post.id} ">
+            <s:form action="reply!stuReply.action?pid=%{post.id}">
                 <tr>
                     <td style="width:19.5%;"  valign="middle" align="center">
                         <s:if test="#session.admin==null">

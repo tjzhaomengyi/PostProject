@@ -59,6 +59,8 @@ public class ReplyAction extends ActionSupport{
 	//恢复帖子学好，帖子号，回复内容
 	public String stuReply() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest();
+		String res = request.getParameter("pid");
+		System.out.println(res+"是否有空格");
 		int id = Integer.parseInt(request.getParameter("pid"));
 		Student student = (Student) ActionContext.getContext().getSession().get("session");
 		try{

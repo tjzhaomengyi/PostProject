@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>回复成功</title>
           <script type="text/javascript">     
             function countDown(secs,surl){     

@@ -9,7 +9,7 @@
     <body>
     <center>
         <h2>版块图标上传</h2>
-        <s:url id="b" action="myUpload!boardImgUpload.action">
+        <s:url id="b" action="myupload!boardImgUpload.action">
             <s:param name="bid"><%=request.getParameter("bid")%> </s:param>
         </s:url>
        <s:form action="%{b}" enctype="multipart/form-data">

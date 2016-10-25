@@ -22,9 +22,9 @@ public class ReplyServiceImpl implements IReplyService{
 	}
 
 	@Override
-	public List<Reply> getReplysByPid(int pId) {
+	public List<Reply> getReplysByPid(int pid) {
 		try{
-		List<Reply> replies = (List<Reply>) dao.loadObject("from Reply as r where r.pid = '"+pId+"' ");
+		List<Reply> replies = (List<Reply>) dao.loadObject("from Reply as r where r.pid='"+pid+"'");
 		return replies;
 	}catch(Exception e){
 		return null;

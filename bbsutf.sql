@@ -1,4 +1,4 @@
-/*
+﻿/*
 Navicat MySQL Data Transfer
 Source Host     : localhost:3306
 Source Database : bbs
@@ -36,7 +36,7 @@ CREATE TABLE `board` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `name` char(20) NOT NULL,
   `description` varchar(50) DEFAULT NULL,
-  `parentid` int(4) DEFAULT NULL,
+  `parentId` int(4) DEFAULT NULL,
   `aid` int(4) NOT NULL,
   `boardImg` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -232,15 +232,15 @@ INSERT INTO `reply` VALUES ('40', '<p>\r\n	关键是心态要好！</p>\r\n', '2
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
-  `stunum` char(15) NOT NULL,
-  `realname` char(10) DEFAULT NULL,
-  `nickname` char(20) DEFAULT NULL,
+  `stuNum` char(15) NOT NULL,
+  `realName` char(10) DEFAULT NULL,
+  `nickName` char(20) DEFAULT NULL,
   `password` char(20) NOT NULL,
   `qq` char(20) DEFAULT NULL,
   `email` char(30) DEFAULT NULL,
   `major` char(20) DEFAULT NULL,
-  `classname` char(20) DEFAULT NULL,
-  `photopath` varchar(100) DEFAULT NULL,
+  `className` char(20) DEFAULT NULL,
+  `photoPath` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
