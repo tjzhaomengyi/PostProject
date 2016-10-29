@@ -17,9 +17,9 @@ public class BoardAction extends ActionSupport{
 	IBoardService boardService;
 	
 	private List<Board> boardList;
-	//×Ó½Úµã
+	
 	private List<Board> childBoards;
-	//¸ù½Úµã
+	
 	private List<Board> rootBoards;
 	
 	private Board board;
@@ -55,7 +55,7 @@ public class BoardAction extends ActionSupport{
     }
     
     
-    //¼ÓÔØÖ÷°å¿é
+    //åŠ è½½ä¸»ç‰ˆå—
     @Override
     public String execute() throws Exception {
     	try {
@@ -66,7 +66,7 @@ public class BoardAction extends ActionSupport{
     	}
     }
     
-    //¼ÓÔØËùÓĞ°å¿é
+    //åŠ è½½æ‰€æœ‰æ¿å—
     public String listBoard() throws Exception{
     	try{
     		setBoardList(boardService.loadAllBoards());
@@ -77,7 +77,7 @@ public class BoardAction extends ActionSupport{
     	}
     }
     
-	//¼ÓÔØ¶ş¼¶°å¿é
+	//åŠ è½½äºŒçº§ç‰ˆå—
     public String listChildBoards() throws Exception
     {
     	int parentId = Integer.valueOf(ServletActionContext.getRequest().getParameter("parentId"));
@@ -90,7 +90,7 @@ public class BoardAction extends ActionSupport{
     		return ERROR;
     	}
     }
-	//¼ÓÔØ¸ù°å¿é
+	//åŠ è½½æ ¹ç‰ˆå—
     public String loadRootBoards() throws Exception{
     	try{
     		setRootBoards(boardService.loadRootBoards());
@@ -101,7 +101,7 @@ public class BoardAction extends ActionSupport{
     	}
     }
     
-    //Ìø×ªÌí¼Ó°å¿é
+    //è·³è½¬æ·»åŠ æ¿å—
     public String prepareAddBoard() throws Exception{
     	try{
     		setBoardList(boardService.loadAllBoards());
@@ -112,35 +112,39 @@ public class BoardAction extends ActionSupport{
     	}
     }
     
-    //Ìí¼Ó°å¿é
+    //æ·»åŠ ç‰ˆå—
     public String addBoard() throws Exception{
     	Admin admin = (Admin) ServletActionContext.getRequest().getSession().getAttribute("admin");
-    	//ÕâÀïÏë»ñÈ¡parentID£¬²»»á£¬×ª»»Îª»ñÈ¡°å¿éID
-    	//»ñÈ¡°å¿éid£¬ÅĞ¶ÏÌí¼Ó1¼¶°å¿é»òÕßÏÂ¼¶°å¿éÊ×ÏÈÈ¡³öparentID
+    	//è¿™é‡Œæœ¬æƒ³è·å–parentId,ä½†æ˜¯é‰´äºå¤šå¯¹ä¸€æ˜ å°„ä¸ºboardï¼Œä¸çŸ¥å¦‚ä½•è·å–ï¼Œæ‰€æœ‰æ¢ä¸ºè·å–ç‰ˆå—id
+        //è·å–ç‰ˆå—idï¼Œ
+        //åˆ¤æ–­æ·»åŠ 1çº§ç‰ˆå—æˆ–è€…ä¸‹çº§ç‰ˆå—ï¼Œé¦–å…ˆå…ˆå–å‡ºparentId
     	int bid = getBoard().getId();
     	int parentId = 0;
     	Board tempBoard = new Board();
-    	//¸³ÖµÊ±ºòÅĞ¿Õ£¬
+    	//èµ‹å€¼çš„æ—¶å€™ä¸€å®šè¦åˆ¤æ–­æ˜¯å¦ä¸ºç©º
+        //æœ‰äº›ç©ºæŒ‡é’ˆå¼‚å¸¸æ˜¯sessionå¤±æ•ˆå¯¼è‡´çš„
     	try{
+    		//å¤„ç†æ·»åŠ ä¸€çº§ç‰ˆå—
     		if(bid == -1){
     			tempBoard.setName(getBoard().getName());
     			tempBoard.setAdmin(admin);
     			tempBoard.setDescription(getBoard().getDescription());
-    			//Ìá½»
+    			//æäº¤
     			if(boardService.saveOrUpdateBoard(tempBoard)){
     				return "addSuccess";
     			}
     			return ERROR;
     		}
-    		//´¦ÀíÌí¼Ó¶ş¼¶°å¿é
+    		//å¤„ç†æ·»åŠ äºŒçº§ç‰ˆå—
     		else{
-    		//¸ù¾İId¼ÓÔØ±»Ìí¼Ó×Ó°æ¿éµÄ¸¸°å¿é
+    			 //é€»è¾‘é”™è¯¯ parentId = boardService.loadBoard(bid).getBoard().getId();
+                //æ ¹æ®idåŠ è½½è¢«æ·»åŠ å­ç‰ˆå—çš„çˆ¶ç‰ˆå—
     			Board board = boardService.loadBoard(bid);
     			tempBoard.setName(getBoard().getName());
     			tempBoard.setAdmin(admin);
     			tempBoard.setBoard(board);
     			tempBoard.setDescription(getBoard().getDescription());
-    			//Ìá½»
+    			//ï¿½á½»
     			if(boardService.saveOrUpdateBoard(tempBoard)){
     				return "addSuccess";
     			}
@@ -154,7 +158,7 @@ public class BoardAction extends ActionSupport{
     }
     
     public String prepareModifyBoard() throws Exception{
-    	//»ñÈ¡°å¿éID
+    	//è·å–ç‰ˆå—id
     	HttpServletRequest request = ServletActionContext.getRequest();
     	int bid = 0;
     	if(request.getParameter("bid")!=null){

@@ -14,7 +14,7 @@ public class LoginServiceImpl implements ILoginService{
 	
 	@Override
 	public Student stuLogin(Student student){
-		//ÅĞ¶ÏÑ§ºÅºÍÃÜÂëÊÇ·ñÓëÊı¾İ¿âÏàµÈ
+		//åˆ¤æ–­å­¦å·å’Œå¯†ç æ˜¯å¦ä¸æ•°æ®åº“ç›¸ç­‰
 		Student stu = (Student) dao.loadObject(
 				"from Student as s where s.stunum = '"+student.getStunum()+"' and s.password= '"+student.getPassword()+"' ");
 		
@@ -28,7 +28,7 @@ public class LoginServiceImpl implements ILoginService{
 	@Override
 	public Admin adminLogin(Admin admin) {
 		// TODO Auto-generated method stub
-		//¹ÜÀíÔ±µÇÂ¼ÑéÖ¤
+		//ç®¡ç†å‘˜ç™»å½•éªŒè¯
 		Admin a = (Admin) dao.loadObject(
 				"from Admin as a where a.account = '"+admin.getAccount()+"' and a.password = '"+admin.getPassword()+"' ");
 		if(a!=null){

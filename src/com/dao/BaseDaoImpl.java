@@ -20,21 +20,21 @@ public class BaseDaoImpl implements BaseDao{
 	@Resource(name="hibernateTemplate")
 	HibernateTemplate hibernateTemplate;
 	
-	//¼ÓÔØÖ¸¶¨idµÄ¶ÔÏó
+	//åŠ è½½æŒ‡å®šidçš„å¯¹è±¡
 	@Override
 	public Object loadById(Class clazz, Serializable id) {
 		// TODO Auto-generated method stub
 		return hibernateTemplate.get(clazz, id);
 	}
 
-	//¸ù¾İHQL²éÕÒÖ¸¶¨¶ÔÏó
+	//æ ¹æ®HQLæŸ¥æ‰¾æŒ‡å®šå¯¹è±¡
 	@Override
 	public Object loadObject(String hql) {
 		// TODO Auto-generated method stub
 		final String hql1 = hql;
 		Object obj = null;
 		List list = hibernateTemplate.executeFind(new HibernateCallback(){
-			//ÖØĞ´·½·¨
+			//é‡å†™æŸ¥è¯¢æ–¹æ³•
 			@Override
 			public Object doInHibernate(Session session) throws HibernateException{
 				Query query = session.createQuery(hql1);
@@ -48,21 +48,21 @@ public class BaseDaoImpl implements BaseDao{
 		return obj;
 	}
 
-	//É¾³ı
+	//åˆ é™¤
 	@Override
 	public void delById(Class clazz, Serializable id) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.delete(hibernateTemplate.load(clazz, id));
 	}
 
-	//±£´æ»ò¸üĞÂ
+	//ä¿å­˜æˆ–æ›´æ–°
 	@Override
 	public void saveOrUpdate(Object obj) {
 		// TODO Auto-generated method stub
 		hibernateTemplate.saveOrUpdate(obj);
 	}
 
-	//»ñÈ¡È«²¿×¢Òâ¿Õ¸ñ
+	//è·å–å…¨éƒ¨   æ³¨æ„ç©ºæ ¼ã€‚ã€‚
 	@Override
 	public List listAll(String clazz) {
 		// TODO Auto-generated method stub
@@ -153,7 +153,7 @@ public class BaseDaoImpl implements BaseDao{
 		return list;
 	}
 
-	//¸ù¾İHQL²éÑ¯ÊıÁ¿
+	//ï¿½ï¿½ï¿½ï¿½HQLï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public int countQuery(String hql) {
 		// TODO Auto-generated method stub

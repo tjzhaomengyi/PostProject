@@ -28,7 +28,7 @@ public class AdminManageAction extends ActionSupport{
 		return super.execute();
 		
 	}
-	//显示个人信息
+	//鏄剧ず涓汉淇℃伅
 	public String personalAdminInfo() throws Exception{
 		Admin sessionAdmin = (Admin) ActionContext.getContext().getSession().get("admin");
 		if(sessionAdmin != null){

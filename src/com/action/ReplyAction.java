@@ -56,19 +56,19 @@ public class ReplyAction extends ActionSupport{
 		return super.execute();
 	}
 	
-	//»Ö¸´Ìû×ÓÑ§ºÃ£¬Ìû×ÓºÅ£¬»Ø¸´ÄÚÈİ
+	//å›å¤å¸–å­ å­¦å·ï¼Œå¸–å­å·ï¼Œå›å¤å†…å®¹
 	public String stuReply() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String res = request.getParameter("pid");
-		System.out.println(res+"ÊÇ·ñÓĞ¿Õ¸ñ");
+		System.out.println(res+"ï¿½Ç·ï¿½ï¿½Ğ¿Õ¸ï¿½");
 		int id = Integer.parseInt(request.getParameter("pid"));
 		Student student = (Student) ActionContext.getContext().getSession().get("session");
 		try{
 			Post post = postService.loadPost(id);
 			replyService.stuReplyPost(student,post,reply);
-			//»ñÈ¡Ñ§ÉúÌû×Ó
+			//è·å–å­¦ç”Ÿå¸–å­
 			setReplys(replyService.getReplysByPid(id));
-			//ÉèÖÃpid»Ø´«¸ø²é¿´Ìû×Ó
+			//è®¾ç½®pidå›ä¼ ç»™æŸ¥çœ‹å¸–å­
 			request.setAttribute("pid", id);
 			return SUCCESS;
 		}catch (Exception e){
@@ -77,9 +77,9 @@ public class ReplyAction extends ActionSupport{
 		
 	}
 	
-	//×¼±¸ĞŞ¸Ä»Ø¸´
+	//×¼ï¿½ï¿½ï¿½Ş¸Ä»Ø¸ï¿½
 	public String prepareModifyReply() throws Exception{
-		//Òªµ½´ïĞŞ¸ÄÒ³ÃæÒªÏÈ»ñÈ¡»Ø¸´µÄidºÅ
+		//Òªï¿½ï¿½ï¿½ï¿½ï¿½Ş¸ï¿½Ò³ï¿½ï¿½Òªï¿½È»ï¿½È¡ï¿½Ø¸ï¿½ï¿½ï¿½idï¿½ï¿½
 		int rid = -1;
 		if(ServletActionContext.getRequest().getParameter("rid")!=null){
 			rid = Integer.valueOf(ServletActionContext.getRequest().getParameter("rid"));
@@ -90,9 +90,9 @@ public class ReplyAction extends ActionSupport{
 	}
 	
 	public String modifyReply() throws Exception {
-		//ÒªĞŞ¸Ä¸ÃÒ»Ìõ»Ø¸´£¬ÒªÌá½»ĞŞ¸Ä
-		//ÒªÌá½»ĞŞ¸ÄÏÈÒªµ½´ïĞŞ¸ÄÒ³Ãæ
-		//½öĞŞ¸ÄÄÚÈİ
+		//è¦ä¿®æ”¹ä¸€æ¡å›å¤ï¼Œè¦æäº¤ä¿®æ”¹
+        //è¦æäº¤ä¿®æ”¹å…ˆè¦åˆ°è¾¾ä¿®æ”¹é¡µé¢
+        //ä»…ä¿®æ”¹å†…å®¹
 		getReply().setContent(getReply().getContent());
 		if(replyService.modifyReply(getReply())){
 			return "modifySuccess";

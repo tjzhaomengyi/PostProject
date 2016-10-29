@@ -7,7 +7,7 @@ import com.mysql.jdbc.Connection;
 
 public interface BaseDao {
 	/*
-	 * ¼ÓÔØÖÆ¶¨IDµÄ³Ö¾Ã»¯¶ÔÏó
+	 * åŠ è½½åˆ¶å®šIDçš„æŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param clazz
 	 * 
@@ -16,14 +16,14 @@ public interface BaseDao {
 	public Object loadById(Class clazz, Serializable id);
 
 	/*
-	 * ¼ÓÔØÂú×ãÌõ¼şµÄ³Ö¾Ã»¯¶ÔÏó
+	 * åŠ è½½æ»¡è¶³æ¡ä»¶çš„æŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param hql
 	 */
 	public Object loadObject(String hql);
 
 	/**
-	 * É¾³ıÖÆ¶¨IDµÄ³Ö¾Ã»¯¶ÔÏó
+	 *åˆ é™¤åˆ¶å®šIDçš„æŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param clazz
 	 * @param id
@@ -32,21 +32,21 @@ public interface BaseDao {
 	public void delById(Class clazz, Serializable id);
 
 	/*
-	 * ±£´æ»ò¸üĞÂÖÆ¶¨³Ö¾Ã»¯¶ÔÏó
+	 * ä¿å­˜æˆ–æ›´æ–°åˆ¶å®šæŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param obj
 	 */
 	public void saveOrUpdate(Object obj);
 
 	/**
-	 * ×°ÔØÖÆ¶¨ÀàµÄËùÓĞ³Ö¾Ã»¯¶ÔÏó
+	 * è£…è½½åˆ¶å®šç±»çš„æ‰€æœ‰æŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param clazz
 	 */
 	public List listAll(String clazz);
 
 	/**
-	 * ·ÖÒ³×°ÔØÖÆ¶¨ÀàµÄËùÓĞ³Ö¾Ã»¯¶ÔÏó
+	 * åˆ†é¡µè£…è½½åˆ¶å®šç±»çš„æ‰€æœ‰æŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param clazz
 	 * @param pageNo
@@ -55,21 +55,21 @@ public interface BaseDao {
 	public List listAll(String clazz, int pageNo, int pageSize);
 
 	/**
-	 * Í³¼ÆÖ¸¶¨ÀàµÄËùÓĞ³Ö¾Ã»¯¶ÔÏó
+	 *ç»Ÿè®¡æŒ‡å®šç±»çš„æ‰€æœ‰æŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param clazz
 	 */
 	public int countAll(String clazz);
 
 	/**
-	 * ²éÑ¯Ö¸¶¨ÀàµÄÂú×ãÌõ¼şµÄ³Ö¾Ã»¯¶ÔÏó
+	 * æŸ¥è¯¢æŒ‡å®šç±»çš„æ»¡è¶³æ¡ä»¶çš„æŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param hql
 	 */
 	public List query(String hql);
 
 	/**
-	 * ·ÖÒ³²éÑ¯Ö¸¶¨ÀàµÄÂú×ãÌõ¼şµÄ³Ö¾Ã»¯¶ÔÏó
+	 * åˆ†é¡µæŸ¥è¯¢æŒ‡å®šç±»çš„æ»¡è¶³æ¡ä»¶çš„æŒä¹…åŒ–å¯¹è±¡
 	 * 
 	 * @param hql
 	 * @param pageNo
@@ -78,21 +78,21 @@ public interface BaseDao {
 	public List query(String hql, int pageNo, int pageSize);
 
 	/**
-	 * Í³¼ÆÖ¸¶¨ÀàµÄ²éÑ¯½á¹û
+	 *ç»Ÿè®¡æŒ‡å®šç±»çš„æŸ¥è¯¢ç»“æœ
 	 * 
 	 * @param hql
 	 */
 	public int countQuery(String hql);
 
 	/**
-	 * Ìõ¼ş¸üĞÂÊı¾İ¿â
+	 *æ¡ä»¶æ›´æ–°æ•°æ®åº“
 	 * 
 	 * @param hql
 	 */
 	public int update(String hql);
 
 	/**
-	 * ´ÓÁ¬½Ó³Ø»ñÈ¡JDBCÁ¬½Ó
+	 * ä»è¿æ¥æ± è·å–JDBCè¿æ¥
 	 * 
 	 */
 	public Connection getConnection();

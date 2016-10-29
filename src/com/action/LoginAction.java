@@ -22,8 +22,8 @@ public class LoginAction extends ActionSupport{
 	private Student student;
     private Admin admin;
     private String tip;
-    private int pageNo; //当前页
-    private int pageSize; //每页条数
+    private int pageNo; 
+    private int pageSize; 
     private int count;
     private List<Post> list;
     private int bid;
@@ -115,7 +115,7 @@ public class LoginAction extends ActionSupport{
     
     @Override
     public String execute() throws Exception {
-    	//登录前清空所有session
+    	//鐧婚檰鍓嶆竻绌烘墍鏈塻ession
     	ActionContext.getContext().getSession().clear();
     	System.out.println(student.getStunum()+","+student.getPassword());
     	Student s = loginService.stuLogin(student);
@@ -127,13 +127,13 @@ public class LoginAction extends ActionSupport{
     		return "loginSuccess";
     	}
     	
-    	addActionMessage("用户名或者密码错误");
+    	addActionMessage("鐢ㄦ埛鍚嶆垨瀵嗙爜閿欒");
     	System.out.println("BAD");
     	return INPUT;
     }
     
     public String adminLogin() throws Exception {
-        //登录前清空所有session
+        //鐧诲綍鍓嶆竻绌烘墍鏈塻ession
 
         ActionContext.getContext().getSession().clear();
 
@@ -144,13 +144,13 @@ public class LoginAction extends ActionSupport{
             setList(result);
             return "loginSuccess";
         }
-        addActionMessage("用户名或密码错误！");
+        addActionMessage("鐢ㄦ埛鍚嶆垨瀵嗙爜閿欒");
         return INPUT;
     }
     
-    //分页帖子列表
+    //鍒嗛〉甯栧瓙鍒楄〃
     public String showAll() {
-    	//设置每页条数
+    	//璁剧疆姣忛〉鏉℃暟
     	setPageSize(15);
     	
     	HttpServletRequest request = ServletActionContext.getRequest();
@@ -180,7 +180,7 @@ public class LoginAction extends ActionSupport{
     	}
     }
     
-    //注销登录
+    //娉ㄩ攢鐧诲綍
     public String exit() {
         ActionContext.getContext().getSession().clear();
         return "exit";

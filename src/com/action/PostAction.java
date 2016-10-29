@@ -108,14 +108,14 @@ public class PostAction extends ActionSupport{
         this.post = post;
     }
 
-  //Ä¬ÈÏÖ´ĞĞ 
+  //é»˜è®¤æ‰§è¡Œ
     @Override
      public String execute() throws Exception {
          setList(postService.allPost());
          return SUCCESS;
      }
     
-    //Ìø×ª·¢Ìû
+    //è·³è½¬å‘å¸–
     public String preparePost() throws Exception{
     	HttpServletRequest request = ServletActionContext.getRequest();
     	Student s = (Student) request.getSession().getAttribute("student");
@@ -125,7 +125,7 @@ public class PostAction extends ActionSupport{
     	return "preparePost";
     }
     
-    //·¢Ìû
+    //å‘å¸–
     public String addPost() throws Exception{
     	HttpServletRequest request = ServletActionContext.getRequest();
     	int bid = 0;
@@ -163,22 +163,22 @@ public class PostAction extends ActionSupport{
     	return ERROR;
     }
     
-    //²é¿´Ìû×Ó
+    //æŸ¥çœ‹å¸–å­
     public String viewDetail(){
     	HttpServletRequest request = ServletActionContext.getRequest();
-    	//Ñ§ÉúµÇÂ¼
+    	//å­¦ç”Ÿç™»å½•
     	if(request.getSession().getAttribute("student")!=null){
     		Student s = (Student) request.getSession().getAttribute("student");
     		setStudent(studentService.getStudentByStunum(s.getStunum()));
     	}
-    	//¹ÜÀíÔ±µÇÂ¼
+    	//ç®¡ç†å‘˜ç™»å½•
     	if(request.getSession().getAttribute("admin")!=null){
     		Admin a = (Admin) request.getSession().getAttribute("admin");
     		setAdmin(admin);
     	}
     	int pid = Integer.parseInt(request.getParameter("pid"));
     	Post p = postService.loadPost(pid);
-    	//ÉèÖÃµã»÷Á¿+1
+    	//è®¾ç½®ç‚¹å‡»é‡+1
     	p.setCount(p.getCount()==null?0:p.getCount()+1);
     	postService.saveOrUpdate(p);
     	setPost(postService.loadPost(pid));
@@ -189,13 +189,13 @@ public class PostAction extends ActionSupport{
     	return ERROR;
     }
     
-    //´ø·ÖÒ³µÄ
+  //å¸¦åˆ†é¡µçš„
     public void viewAll(int pageNo,int pageSize){
     	int bid = Integer.valueOf(ServletActionContext.getRequest().getParameter("bid"));
     	setList(postService.pageAllPost(bid, pageNo, pageSize));
     }
     
-    //²é¿´ÎÒµÄÌû×Ó
+  //æŸ¥çœ‹æˆ‘çš„å¸–å­
     public String viewPostsByUser(){
     	Student s = (Student) ActionContext.getContext().getSession().get("student");
     	Admin a = (Admin) ActionContext.getContext().getSession().get("admin");
@@ -212,7 +212,7 @@ public class PostAction extends ActionSupport{
     	return ERROR;
     }
     
-    //×¼±¸ĞŞ¸Ä
+    //å‡†å¤‡ä¿®æ”¹
     public String prepareModify() throws Exception{
     	int pid = -1;
     	if(ServletActionContext.getRequest().getParameter("pid")!=null){
@@ -222,7 +222,7 @@ public class PostAction extends ActionSupport{
     	setPost(postService.loadPost(pid));
     	return "prepareSuccess";
     }
-    //ĞŞ¸ÄÌû×Ó
+  //ä¿®æ”¹å¸–å­
     public String modifyPost() throws Exception{
     	int pid = -1;
     	if(ServletActionContext.getRequest().getParameter("pid")!=null){
@@ -239,7 +239,7 @@ public class PostAction extends ActionSupport{
     	return ERROR;
     }
 
-    //É¾³ıÌû×Ó
+    //åˆ é™¤å¸–å­
     public String deletePost() throws Exception{
     	int pid = -1;
     	if(ServletActionContext.getRequest().getParameter("pid")!=null){
@@ -253,10 +253,10 @@ public class PostAction extends ActionSupport{
     	return ERROR;
     }
 	
-    //ËÑË÷Ìû×Ó£¬°´Ìû×ÓÃûËÑË÷
+  //æœç´¢å¸–å­ æŒ‰å¸–å­åæœç´¢
     public String SearchPost() throws Exception{
-    	//ËÑË÷Ìû×Ó ÒªÖ´ĞĞËÑË÷º¯Êı
-    	//ÒªÖ´ĞĞËÑË÷º¯ÊıĞèÒªÊäÈë¹Ø¼ü×Ö
+    	//TO æœç´¢å¸–å­ è¦æ‰§è¡Œæœç´¢å‡½æ•°
+        //è¦æ‰§è¡Œæœç´¢å‡½æ•° éœ€è¦é”®å…¥å…³é”®å­—
     	try{
     	String searchKey = getPost().getName().trim();
     	if(searchKey != ""){

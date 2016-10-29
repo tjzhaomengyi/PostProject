@@ -28,7 +28,7 @@ public class StudentManageAction extends ActionSupport{
     	return super.execute();
     }
     
-    //ÏÔÊ¾¸öÈËĞÅÏ¢
+  //æ˜¾ç¤ºä¸ªäººä¿¡æ¯
     public String personalStuInfo() throws Exception
     {
     	Student sessionStudent = (Student) ActionContext.getContext().getSession().get("student");
@@ -40,7 +40,7 @@ public class StudentManageAction extends ActionSupport{
     
     }
     
-    //ĞŞ¸Ä¸öÈËĞÅÏ¢
+  //ä¿®æ”¹ä¸ªäººä¿¡æ¯
     public String modifyStuInfo() throws Exception{
     	Student snStudent = (Student) ActionContext.getContext().getSession().get("student");
     	Student s = studentService.getStudentByStunum(snStudent.getStunum());
@@ -55,15 +55,15 @@ public class StudentManageAction extends ActionSupport{
     	return ERROR;
     }
     
-    //ĞŞ¸ÄÃÜÂë
+  //ä¿®æ”¹å¯†ç 
 	public String MoidfyPsw() throws Exception{
-		//»ñÈ¡µ±Ç°Ñ§ÉúĞÅÏ¢
+		//è·å–å½“å‰å­¦ç”Ÿä¿¡æ¯
 		Student sessionStudent = (Student) ActionContext.getContext().getSession().get("student");
 		Student s = studentService.getStudentByStunum(sessionStudent.getStunum());
 		if(getPsw().equals(s.getPassword())&&getNewpsw().equals(getConfirmpsw())){
 			s.setPassword(getNewpsw());
 			studentService.modifyStudent(s);
-			addActionMessage("ÃÜÂëĞŞ¸Ä³É¹¦");
+			addActionMessage("å¯†ç ä¿®æ”¹æˆåŠŸï¼");
 			return "modifyPswSuccess";
 		}
 		return ERROR;

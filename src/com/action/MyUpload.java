@@ -24,11 +24,11 @@ public class MyUpload extends ActionSupport{
 	@Resource(name="boardService")
 	IBoardService boardService;
 	
-	//·â×°ÉÏ´«ÎÄ¼þÓòµÄÊôÐÔ
+	//å°è£…ä¸Šä¼ æ–‡ä»¶çš„å±žæ€§
 	private File doc;
-	//·â×°ÉÏ´«ÎÄ¼þµÄÀàÐÍ
+	//å°è£…ä¸Šä¼ æ–‡ä»¶çš„ç±»åž‹
 	private String docContentType;
-	//·â×°ÉÏ´«ÎÄ¼þÃû
+	//å°è£…ä¸Šä¼ æ–‡ä»¶å
 	private String docFileName;
 	private String path;
 	
@@ -76,7 +76,7 @@ public class MyUpload extends ActionSupport{
 		while ((length = fis.read(b))>0){
 			fos.write(b,0,length);
 		}
-		//½«Í·ÏñÂ·¾¶Ð´ÈëÊý¾Ý¿â
+		//ï¿½ï¿½Í·ï¿½ï¿½Â·ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
 		Student stu = (Student) ActionContext.getContext().getSession().get("student");
 		if(stu != null){
 			Student temp = studentService.getStudentByStunum(stu.getStunum());
