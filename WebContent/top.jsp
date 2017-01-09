@@ -32,7 +32,8 @@
                         <h4><a href="#">管理员</a>，欢迎您！</h4>
                         <%}
                             if (request.getSession().getAttribute("student") == null && request.getSession().getAttribute("admin") == null) {%>
-                        <h4>您 好,请<a href="<%=request.getContextPath()%>/login.jsp" style="color:orange;">登 录</a></h4>
+                        <h4>您好,请<a href="<%=request.getContextPath()%>/login.jsp" style="color:orange;">登 录</a>
+                        ,<a href="<%=request.getContextPath()%>/regist.jsp" style="color:orange;">注 册</a></h4>
                         <%}
                         %>
                     </div>
