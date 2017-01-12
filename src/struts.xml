@@ -64,7 +64,13 @@
             <result name="modifySuccess">/MessageInfo/ModifyStuInfoSuccess.jsp</result>
             <result name="success">/PersonalInfo/StuPersonalInfo.jsp</result>
             <result name="modifyPswSuccess">/PersonalInfo/StuPswModify.jsp</result>
+  
         </action>
+        <!--添加注册的处理 -->
+        <action name="regist" class="com.action.StudentManageAction" method="addStudent">
+        	<result name="toRegistSuccessPage">/PersonalInfo/StuPswModify.jsp</result>
+        </action>
+        
         
          <!-- 管理员 -->
      	<action name="admin" class="com.action.AdminManageAction">
