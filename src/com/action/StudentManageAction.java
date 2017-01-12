@@ -15,6 +15,8 @@ public class StudentManageAction extends ActionSupport{
 	private String newpsw;
 	private String confirmpsw;
 	
+	
+	
 	public Student getStudent() {
         return student;
     }
@@ -68,6 +70,22 @@ public class StudentManageAction extends ActionSupport{
 		}
 		return ERROR;
 	}
+	
+	/**
+	 *添加用户 
+	 *
+	 *@return
+	 */
+	public String addStudent() {
+		//注册学生dao
+		if(studentService.saveOrUpdate(student)){
+			return "toRegistSuccessPage";
+		}else{
+			return ERROR;
+		}
+				
+	}
+	
 	
 	 /**
      * @return the psw

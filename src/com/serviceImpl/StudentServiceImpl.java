@@ -29,5 +29,16 @@ public class StudentServiceImpl implements IStudentService{
 			return false;
 		}
 	}
+
+	@Override
+	public boolean saveOrUpdate(Student student) {
+		// TODO Auto-generated method stub
+		try{
+			dao.saveOrUpdate(student);
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
 	
 }

@@ -13,4 +13,5 @@ public interface IStudentService {
     
     public boolean modifyStudent(Student student);
     
+    public boolean saveOrUpdate(Student student);
 }
